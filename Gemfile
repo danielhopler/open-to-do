@@ -41,7 +41,6 @@ group :development, :test do
    gem 'shoulda-matchers'
    gem 'faker'
    gem 'factory_bot_rails'
-   gem 'pry-rails'
    gem 'rspec-rails', '~> 3.8'
    gem 'rails-controller-testing'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -73,3 +72,5 @@ gem 'bootstrap-sass'
 gem 'figaro'
 
 gem 'bcrypt'
+
+gem 'active_model_serializers', '~> 0.10.0'
