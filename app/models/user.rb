@@ -1,9 +1,8 @@
 class User < ApplicationRecord
-	has_many :lists
+	has_many :lists, dependent: :destroy
 
 	before_save { self.email = email.downcase if email.present?}
 
-	validates :name, presence: true, length: {minimum: 3}
 	validates :email,
 						presence: true,
 						uniqueness: true,
