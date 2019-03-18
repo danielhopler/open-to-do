@@ -1,11 +1,9 @@
 class User < ApplicationRecord
 	has_many :lists, dependent: :destroy
 
-	before_save { self.email = email.downcase if email.present?}
-
-	validates :email,
+	validates :username,
 						presence: true,
-						uniqueness: true,
+						uniqueness: { case_sensitive: false},
 						length: {minimum:5, maximum: 250}
 
 	validates :password, presence: true, length: { minimum: 8 }, if: -> {password_digest.nil?}
