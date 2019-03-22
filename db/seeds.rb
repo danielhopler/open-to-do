@@ -14,7 +14,25 @@ require 'faker'
   )
 end
 
+ users = User.all
 
+5.times do
+  List.create!(
+    user: users.sample,
+    title: Faker::Games::Pokemon.name,
+    private: false
+  )
+end
+
+ lists = List.all
+
+10.times do
+  Item.create!(
+    list: lists.sample,
+    name: Faker::Games::Pokemon.move,
+    completed: false
+  )
+end
 
 
 
@@ -22,3 +40,5 @@ end
 
 puts "Seed finished"
 puts "#{User.count} users created"
+puts "#{List.count} lists created"
+puts "#{Item.count} items created"

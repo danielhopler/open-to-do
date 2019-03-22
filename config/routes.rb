@@ -8,11 +8,11 @@ Rails.application.routes.draw do
        resources :lists
      end
 
-     resources :lists, only: [] do
+     resources :lists, only: [:update] do
        resources :items, only: [:create]
      end
 
-     resources :items, only: [:destroy]
+     resources :items, only: [:update, :destroy]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
