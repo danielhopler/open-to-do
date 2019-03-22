@@ -10,7 +10,7 @@ require 'faker'
 5.times do
   User.create!(
     username: Faker::Internet.user_name(5),
-    password_digest: 'password'
+    password: 'password'
   )
 end
 
